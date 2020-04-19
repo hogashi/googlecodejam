@@ -6,6 +6,11 @@ t.times{|tt|
 
   res = 'IMPOSSIBLE'
 
+  if ((x % 2) + (y % 2)) != 1
+    puts "Case ##{tt + 1}: #{res}"
+    next
+  end
+
   xl, yl = [x,  y].map{|i|
     if i == 0
       0
