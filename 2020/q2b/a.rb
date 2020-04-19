@@ -39,8 +39,10 @@ t.times{|tt|
   unless cand.nil?
     res = ''
     length = xors[index].to_s(2).length
-    xstr = xorxys[index][0].to_s(2).reverse
-    ystr = xorxys[index][1].to_s(2).reverse
+    xrstr = xorxys[index][0].to_s(2).reverse
+    yrstr = xorxys[index][1].to_s(2).reverse
+    xstr = xrstr + ('0' * (xl.to_s(2).length - xrstr.length))
+    ystr = yrstr + ('0' * (yl.to_s(2).length - yrstr.length))
     # p index
     case index
       when 0
@@ -92,13 +94,15 @@ t.times{|tt|
     if xr < 0
       res = res.gsub(/e/, 'W').gsub(/w/, 'E')
     else
-      res.upcase!
+      res = res.gsub(/e/, 'E').gsub(/w/, 'W')
     end
+
+    # p yr
 
     if yr < 0
       res = res.gsub(/n/, 'S').gsub(/s/, 'N')
     else
-      res.upcase!
+      res = res.gsub(/n/, 'N').gsub(/s/, 'S')
     end
   end
 
