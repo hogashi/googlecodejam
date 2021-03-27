@@ -33,7 +33,7 @@ t.times{|ti|
     # p el
   }
 
-  puts "Case #{ti + 1}: #{sum}"
+  puts "Case ##{ti + 1}: #{sum}"
 }
 
 
